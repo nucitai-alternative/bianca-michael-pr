@@ -1,2 +1,0 @@
-#Inicio proyecto
-#soy bianca
