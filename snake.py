@@ -17,7 +17,7 @@ aim = vector(0, -10)
 
 # AGREGADO: lista de los 5 colores permitidos.
 # Se excluye el rojo para los colores de la víbora y la comida.
-colors = ['black', 'blue', 'green', 'yellow', 'purple']
+colors = ['black', 'blue', 'green', 'pink', 'purple']
 
 # AGREGADO: selecciona dos colores diferentes al azar.
 # El primer color corresponde a la víbora y el segundo a la comida.
