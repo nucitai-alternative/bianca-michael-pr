@@ -42,13 +42,85 @@ def circle(start, end):
 
 
 def rectangle(start, end):
-    """Draw rectangle from start to end."""
-    pass  # TODO
+    """Draw a rectangle from start to end.
+
+    Args:
+        start: Initial point of the rectangle.
+        end: Opposite point of the rectangle.
+
+    Returns:
+        None.
+    """
+
+    # Levanta la pluma para moverse sin dibujar.
+    up()
+
+    # Coloca la tortuga en el punto inicial.
+    goto(start.x, start.y)
+
+    # Baja la pluma para comenzar a dibujar.
+    down()
+
+    # Comienza a rellenar la figura.
+    begin_fill()
+
+    # Repite el proceso dos veces para dibujar
+    # los cuatro lados del rectangulo.
+    for count in range(2):
+
+        # Dibuja el lado horizontal.
+        forward(end.x - start.x)
+
+        # Gira 90 grados hacia la izquierda.
+        left(90)
+
+        # Dibuja el lado vertical.
+        forward(end.y - start.y)
+
+        # Gira 90 grados para continuar
+        # con el siguiente lado.
+        left(90)
+
+    # Termina el relleno del rectangulo.
+    end_fill()
 
 
 def triangle(start, end):
-    """Draw triangle from start to end."""
-    pass  # TODO
+    """Draw an equilateral triangle from start to end.
+
+    Args:
+        start: Initial point of the triangle.
+        end: Point used to determine the side length.
+
+    Returns:
+        None.
+    """
+
+    # Levanta la pluma para moverse sin dibujar.
+    up()
+
+    # Coloca la tortuga en el punto inicial.
+    goto(start.x, start.y)
+
+    # Baja la pluma para comenzar a dibujar.
+    down()
+
+    # Comienza a rellenar la figura.
+    begin_fill()
+
+    # Repite el proceso tres veces,
+    # una por cada lado del triangulo.
+    for count in range(3):
+
+        # Dibuja un lado del triangulo.
+        forward(end.x - start.x)
+
+        # Gira 120 grados para formar
+        # un triangulo equilatero.
+        left(120)
+
+    # Termina el relleno del triangulo.
+    end_fill()
 
 
 def tap(x, y):
