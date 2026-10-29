@@ -60,9 +60,12 @@ def move():
     for body in snake:
         square(body.x, body.y, 9, snake_color)
 
+<<<<<<< HEAD
     # dibuja la comida con su color aleatorio
     square(food.x, food.y, 9, food_color)
 
+=======
+>>>>>>> parent of 59a7f73 (Agrgar movimiento aleatorio a la comida sin salir de la ventana)
     square(food.x, food.y, 9, 'green')
     update()
 
