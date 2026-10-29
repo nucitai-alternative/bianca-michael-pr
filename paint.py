@@ -37,16 +37,26 @@ def square(start, end):
 
 
 def circle(start, end):
-    """Completar el circulo"""
+    """Dibuja un círculo relleno utilizando dos puntos seleccionados
+    por el usuario.
 
+    Parámetros:
+        start (vector): Punto inicial donde comienza el círculo.
+        end (vector): Punto utilizado para calcular el radio."""
+    # Levanta la pluma para moverse sin dibujar.
     up()
+    # Se coloca en el punto inicial.
     goto(start.x, start.y)
+    # Baja la pluma para comenzar a dibujar.
     down()
+    # Calcular el radio tomando la distancia horizontal entre el punto inicial y final.
 
     radius = abs(end.x - start.x)
 
+    # Comienza a rellenar la figura.
     begin_fill()
     dot(radius * 2)
+    # Termina el relleno del círculo.
     end_fill()
 
 
@@ -165,5 +175,7 @@ onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
-onkey(lambda: color('purple'), 'P')      #nuevo color, morado
+# Nuevo color agregado 
+# Al presionar la tecla P se selecciona el color morado.
+onkey(lambda: color('purple'), 'P')      
 done()
