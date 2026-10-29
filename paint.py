@@ -71,36 +71,36 @@ def rectangle(start, end):
         None.
     """
 
-    # Levanta la pluma para moverse sin dibujar.
+    # Levanta la pluma para moverse sin dibujar
     up()
 
-    # Coloca la tortuga en el punto inicial.
+    # Coloca la tortuga en el punto inicial
     goto(start.x, start.y)
 
-    # Baja la pluma para comenzar a dibujar.
+    # Baja la pluma para comenzar a dibujar
     down()
 
-    # Comienza a rellenar la figura.
+    # Comienza a rellenar la figura
     begin_fill()
 
     # Repite el proceso dos veces para dibujar
-    # los cuatro lados del rectangulo.
+    # los cuatro lados del rectangulo
     for count in range(2):
 
-        # Dibuja el lado horizontal.
+        # Dibuja el lado horizontal
         forward(end.x - start.x)
 
-        # Gira 90 grados hacia la izquierda.
+        # Gira 90 grados hacia la izquierda
         left(90)
 
-        # Dibuja el lado vertical.
+        # Dibuja el lado vertical
         forward(end.y - start.y)
 
         # Gira 90 grados para continuar
-        # con el siguiente lado.
+        # con el siguiente lado
         left(90)
 
-    # Termina el relleno del rectangulo.
+    # Termina el relleno del rectangulo
     end_fill()
 
 
@@ -115,30 +115,30 @@ def triangle(start, end):
         None.
     """
 
-    # Levanta la pluma para moverse sin dibujar.
+    # Levanta la pluma para moverse sin dibujar
     up()
 
-    # Coloca la tortuga en el punto inicial.
+    # Coloca la tortuga en el punto inicial
     goto(start.x, start.y)
 
-    # Baja la pluma para comenzar a dibujar.
+    # Baja la pluma para comenzar a dibujar
     down()
 
-    # Comienza a rellenar la figura.
+    # Comienza a rellenar la figura
     begin_fill()
 
     # Repite el proceso tres veces,
-    # una por cada lado del triangulo.
+    # una por cada lado del triangulo
     for count in range(3):
 
-        # Dibuja un lado del triangulo.
+        # Dibuja un lado del triangulo
         forward(end.x - start.x)
 
         # Gira 120 grados para formar
-        # un triangulo equilatero.
+        # un triangulo equilatero
         left(120)
 
-    # Termina el relleno del triangulo.
+    # Termina el relleno del triangulo
     end_fill()
 
 
@@ -176,6 +176,6 @@ onkey(lambda: store('shape', circle), 'c')
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
 # Nuevo color agregado 
-# Al presionar la tecla P se selecciona el color morado.
+# Al presionar la tecla P se selecciona el color morado
 onkey(lambda: color('purple'), 'P')      
 done()

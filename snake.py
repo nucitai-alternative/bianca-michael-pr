@@ -8,10 +8,16 @@ Exercises
 4. Change the snake to respond to mouse clicks.
 """
 
-from random import randrange, choice #Cambio 
+from random import randrange
 from turtle import *
 
 from freegames import square, vector
+
+# lista de 5 diferentes colores, excepto el rojo
+colors = ['black', 'blue', 'green', 'pink', 'purple']
+
+# se le asigna al azar
+snake_color, food_color = sample(colors, 2)
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
@@ -50,24 +56,17 @@ def move():
 
     clear()
 
+    # dibuja cada segmento de la vibora
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, snake_color)
 
-    # CAMBIO:Mueve la comida 10 pixeles en una dirección aleatoria.
-    dx = choice([-10, 0, 10])
-    dy = choice([-10, 0, 10])
-    #Calcula la nueva posición
-    nueva_x = food.x + dx
-    nueva_y = food.y + dy
-
-    # Evitar que salga de los límites de la ventana.
-    if -190 <= nueva_x <= 190:
-        food.x = nueva_x
-    if -190 <= nueva_y <= 190:
-        food.y = nueva_y
+    # dibuja la comida con su color aleatorio
+    square(food.x, food.y, 9, food_color)
 
     square(food.x, food.y, 9, 'green')
     update()
+
+    # programa el siguiente movimiento
     ontimer(move, 100)
 
 
